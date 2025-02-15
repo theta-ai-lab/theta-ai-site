@@ -1,0 +1,52 @@
+:root {
+  --text-color: white;
+  --gradient-end: white;
+  --matrix-bg: rgba(0, 0, 0, 0.9);
+}
+
+.light-mode {
+  --text-color: #1a1a1a;
+  --gradient-end: #0066cc;
+  --matrix-bg: rgba(255, 255, 255, 0.9);
+}
+
+.home-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  color: var(--text-color); /* Updated to use CSS variable */
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, cyan, var(--gradient-end));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Add these new media queries for system preference detection */
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: #1a1a1a;
+    --gradient-end: #0066cc;
+    --matrix-bg: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.matrix-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--matrix-bg); /* Updated to use CSS variable */
+  z-index: -1;
+  overflow: hidden;
+}

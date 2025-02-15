@@ -1,0 +1,87 @@
+/* Global reset for box sizing */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Header styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    overflow-x: hidden; /* Prevent overflow to the right */
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+  }
+  
+  /* Light mode navbar background */
+  .light-mode .navbar {
+    background-color: rgba(240, 240, 240, 0.9); /* Slightly gray with transparency */
+  }
+  
+  /* Dark mode navbar background */
+  .dark-mode .navbar {
+    background-color: rgba(30, 30, 30, 0.9); /* Darker gray with transparency */
+  }
+  
+  /* Logo with Greek letter theta (θ) */
+  .theta-logo {
+    font-size: 2rem; /* Slightly bigger for better visibility */
+    font-weight: bold; /* Ensure bold for prominence */
+    display: inline-block;
+    transition: color 0.3s ease; /* Smooth transition for logo color */
+  }
+  
+  /* Dark mode color */
+  .dark-mode .theta-logo {
+    color: lightblue; /* Light blue for dark mode */
+  }
+  
+  /* Light mode color */
+  .light-mode .theta-logo {
+    color: lightgray; /* Light gray for light mode */
+  }
+  
+  /* Navigation links */
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: #fff; /* Default white color for navigation links */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  /* Light mode links color */
+  .light-mode nav a {
+    color: lightgray; /* Light gray for links in light mode */
+  }
+  
+  /* Dark mode links color */
+  .dark-mode nav a {
+    color: lightblue; /* Light blue for links in dark mode */
+  }
+  
+  /* Button styling */
+  button {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  /* Light mode button color */
+  .light-mode button {
+    border-color: lightgray; /* Light gray border for button in light mode */
+  }
+  

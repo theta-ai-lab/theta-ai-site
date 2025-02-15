@@ -1,0 +1,51 @@
+/* Modern Cursor Ring */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, transform 0.08s ease-out;
+  mix-blend-mode: difference;
+  border: 2px solid rgba(0, 255, 255, 0.8); /* Default neon cyan */
+}
+
+/* Hover Effect: Expands cursor on hover */
+.custom-cursor.hovered {
+  width: 35px;
+  height: 35px;
+  border-width: 3px;
+}
+
+/* Dark Mode Cursor: Glowing cyan ring */
+.custom-cursor.dark-mode {
+  border-color: rgba(0, 255, 255, 0.8);
+}
+
+/* Light Mode Cursor: Subtle gray ring */
+.custom-cursor.light-mode {
+  border-color: rgba(100, 100, 100, 0.5);
+}
+
+/* Cursor Trail */
+.cursor-trail {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.12s ease-out;
+  filter: blur(10px);
+}
+
+/* Dark Mode Trail */
+.cursor-trail.dark-mode {
+  background-color: rgba(0, 255, 255, 0.5);
+}
+
+/* Light Mode Trail */
+.cursor-trail.light-mode {
+  background-color: rgba(128, 128, 128, 0.3);
+}
