@@ -1,32 +1,169 @@
+/* Team.css */
+:root {
+  --text-color: lightblue; /* Matches Home.css */
+  --gradient-end: white; /* Matches Home.css */
+  --matrix-bg: rgba(0, 0, 0, 0.9); /* Matches Home.css */
+  --content-text-color: var(--text-color); /* Matches Home.css */
+}
+
+/* Light mode overrides */
+.app.light {
+  --text-color: #1a1a1a; /* Dark grey for light mode */
+  --gradient-end: #0066cc; /* Matches Home.css */
+  --matrix-bg: rgba(255, 255, 255, 0.9); /* Matches Home.css */
+  --content-text-color: #2d2d2d; /* Slightly lighter for readability */
+}
+
 .team-page {
-    padding: 2rem;
-    text-align: center;
+  position: relative; /* For overlay positioning */
+  padding: 4rem 2rem;
+  text-align: center;
+  min-height: 100vh;
+  /* Background now applied via pseudo-element */
+}
+
+/* Mimic home page background overlay */
+.team-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--matrix-bg);
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* Flex container aligned in one row with hidden scrollbar */
+.team-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2.5rem;
+  max-width: 100%;
+  overflow-x: auto; /* Enables horizontal scroll if needed */
+  padding: 0 1rem;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.team-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Team card styles with original fadeInUp animation */
+.team-card {
+  background: rgba(255, 255, 255, 0.05); /* Semi-transparent white */
+  border-radius: 15px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Light mode: more prominent boxes */
+.app.light .team-card {
+  background: rgba(0, 0, 0, 0.05); /* Semi-transparent black for light mode */
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effects */
+.team-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+.app.light .team-card:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.team-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: -80px auto 1rem;
+  border: 3px solid var(--text-color);
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-card h2 {
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.team-card p {
+  color: var(--content-text-color);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  min-height: 80px;
+}
+
+.team-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(45deg, cyan, var(--gradient-end));
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Dark mode Connect button (unchanged) */
+.app.dark .team-card a {
+  color: #ddd;
+  background: linear-gradient(45deg, #00aabb, #004488);
+}
+
+.team-card a:hover {
+  transform: scale(1.00);
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+}
+
+.team-page h1 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.team-page h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, cyan, var(--gradient-end));
+}
+
+/* Original fadeInUp animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .team-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .team-card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 1rem;
-    width: 250px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-  }
-  
-  .team-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .team-photo {
-    width: 100%;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-  }
-  
+}
+
+/* Stagger animations for each card */
+.team-card:nth-child(1) { animation-delay: 0.1s; }
+.team-card:nth-child(2) { animation-delay: 0.2s; }
+.team-card:nth-child(3) { animation-delay: 0.3s; }
+.team-card:nth-child(4) { animation-delay: 0.4s; }
