@@ -43,7 +43,7 @@
   
   /* Light mode color */
   .light-mode .theta-logo {
-    color: lightgray; /* Light gray for light mode */
+    color: rgba(245, 245, 245, 1); /* Light gray for light mode */
   }
   
   /* Navigation links */
@@ -62,7 +62,7 @@
   
   /* Light mode links color */
   .light-mode nav a {
-    color: lightgray; /* Light gray for links in light mode */
+    color: rgba(245, 245, 245, 1) /* Light gray for links in light mode */
   }
   
   /* Dark mode links color */

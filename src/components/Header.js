@@ -4,11 +4,11 @@ import './Header.css';
 
 function Header({ darkMode, toggleMode }) {
   return (
-    <header className="navbar">
+    <header className={`navbar ${darkMode ? 'dark-mode' : 'light-mode'}`}>
       <div className="logo">
         {/* Use Unicode character U+03D1 (θ) */}
         <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <span className={`theta-logo ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+          <span className="theta-logo">
             &#x03D1; {/* Unicode for theta */}
           </span>
         </Link>
@@ -16,17 +16,17 @@ function Header({ darkMode, toggleMode }) {
       <nav>
         <ul className="nav-list">
           <li>
-            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link to="/" className="nav-link">
               Company
             </Link>
           </li>
           <li>
-            <Link to="/team" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link to="/team" className="nav-link">
               Team
             </Link>
           </li>
           <li>
-            <Link to="/projects" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link to="/projects" className="nav-link">
               Projects
             </Link>
           </li>
