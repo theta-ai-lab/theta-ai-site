@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header';
+import Footer from './components/Footer'; // Import Footer
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Team from './pages/Team';
@@ -11,8 +12,8 @@ function App() {
 
   useEffect(() => {
     // Update background color dynamically to prevent white flashes
-    document.body.style.backgroundColor = darkMode ? "#000" : "#e0e0e0"; 
-    document.documentElement.style.backgroundColor = darkMode ? "#000" : "#e0e0e0"; 
+    document.body.style.backgroundColor = darkMode ? "#000" : "#e0e0e0";
+    document.documentElement.style.backgroundColor = darkMode ? "#000" : "#e0e0e0";
   }, [darkMode]);
 
   const toggleMode = () => {
@@ -24,11 +25,14 @@ function App() {
       <Router>
         <Header darkMode={darkMode} toggleMode={toggleMode} />
         <CustomCursor darkMode={darkMode} /> {/* Pass darkMode as a prop */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/team" element={<Team />} />
-          {/* You can add more routes, e.g., for /projects, as needed */}
-        </Routes>
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/team" element={<Team />} />
+            {/* You can add more routes, e.g., for /projects, as needed */}
+          </Routes>
+        </main>
+        <Footer /> {/* Ensure Footer is always at the bottom */}
       </Router>
     </div>
   );

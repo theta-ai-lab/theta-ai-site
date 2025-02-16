@@ -1,0 +1,93 @@
+.footer {
+  width: 100%;
+  background: inherit; /* Matches main page */
+  font-size: 0.75rem;
+  padding: 10px 0; /* Slimmer footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center; /* Centers everything */
+  align-items: center;
+  gap: 80px; /* Keeps columns evenly spaced */
+  max-width: 900px; /* Prevents stretching */
+  width: 100%;
+  margin: 0 auto; /* Centers the whole section */
+}
+
+.footer-section {
+  text-align: center;
+  flex: 1; /* Equal space for both sections */
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 0.7rem;
+}
+
+/* Theme colors */
+.app.dark .footer {
+  color: lightblue;
+}
+
+.app.light .footer {
+  color: grey;
+}
+
+/* Mobile Fix */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.horizontal-nav {
+  display: flex;
+  gap: 2rem; /* Consistent spacing between items */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.horizontal-nav li {
+  position: relative;
+}
+
+.horizontal-nav a {
+  color: inherit;
+  text-decoration: none;
+  /*font-size: 0.9rem;*/
+  font-weight: 500;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.horizontal-nav a:hover {
+  color: cyan; /* Match your theme */
+  opacity: 0.8;
+}
+
+/* Optional: Add a subtle underline effect on hover */
+.horizontal-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: cyan;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.horizontal-nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
