@@ -1,13 +1,17 @@
 :root {
-  --text-color: white;
+  /*--text-color: rgba(220, 220, 220, 1); !* Light grey (almost white) for dark mode *!*/
+  --text-color: lightblue; /* Light grey (almost white) for dark mode */
   --gradient-end: white;
   --matrix-bg: rgba(0, 0, 0, 0.9);
+  --content-text-color: var(--text-color); /* Default content text color for dark mode */
 }
 
-.light-mode {
-  --text-color: #1a1a1a;
+/* When the parent container has the "light" class, override the variables */
+.app.light {
+  --text-color: #1a1a1a; /* Dark grey (almost black) for light mode */
   --gradient-end: #0066cc;
   --matrix-bg: rgba(255, 255, 255, 0.9);
+  --content-text-color: #2d2d2d; /* Slightly lighter than --text-color for readability */
 }
 
 .home-container {
@@ -19,7 +23,7 @@
   height: 100vh;
   text-align: center;
   overflow: hidden;
-  color: var(--text-color); /* Updated to use CSS variable */
+  color: var(--text-color);
 }
 
 .title {
@@ -29,15 +33,25 @@
   background: linear-gradient(90deg, cyan, var(--gradient-end));
   -webkit-background-clip: text;
   color: transparent;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
 }
 
-/* Add these new media queries for system preference detection */
-@media (prefers-color-scheme: light) {
-  :root {
-    --text-color: #1a1a1a;
-    --gradient-end: #0066cc;
-    --matrix-bg: rgba(255, 255, 255, 0.9);
-  }
+.subtitle {
+  color: var(--content-text-color);
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.content-box {
+  max-width: 600px;
+  margin-top: 2rem;
+}
+
+.content-box p {
+  color: var(--content-text-color);
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .matrix-overlay {
@@ -46,7 +60,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--matrix-bg); /* Updated to use CSS variable */
+  background: var(--matrix-bg);
   z-index: -1;
   overflow: hidden;
 }
