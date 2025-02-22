@@ -85,3 +85,131 @@
     border-color: lightgray; /* Light gray border for button in light mode */
   }
   
+  /* Mobile Logo Button */
+  .mobile-logo-button {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 10px;
+  }
+  
+  /* Modal Overlay */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+  }
+  
+  .modal-content {
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 300px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Light mode modal */
+  .light-mode .modal-content {
+    background-color: rgba(240, 240, 240, 0.9);
+  }
+  
+  /* Dark mode modal */
+  .dark-mode .modal-content {
+    background-color: rgba(30, 30, 30, 0.9);
+  }
+  
+  .modal-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .modal-nav-list li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .modal-nav-list a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .modal-nav-list button {
+    width: 80%;
+    padding: 12px;
+    margin: 10px auto;
+    background: none;
+    border: 1px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: block;
+  }
+  
+  /* Light mode modal colors */
+  .light-mode .modal-nav-list a {
+    color: rgba(245, 245, 245, 1);
+  }
+  
+  .light-mode .modal-nav-list button {
+    color: rgba(245, 245, 245, 1);
+    border-color: rgba(245, 245, 245, 1);
+  }
+  
+  /* Dark mode modal colors */
+  .dark-mode .modal-nav-list a {
+    color: lightblue;
+  }
+  
+  .dark-mode .modal-nav-list button {
+    color: lightblue;
+    border-color: lightblue;
+  }
+  
+  .modal-overlay.active {
+    display: flex;
+  }
+  
+  /* Mobile Styles */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      display: none; /* Hide the regular header */
+    }
+    
+    .mobile-logo-button {
+      display: block; /* Show the mobile logo button */
+    }
+    
+    .mobile-logo-button .theta-logo {
+      font-size: 1.5rem;
+      color: lightblue;
+    }
+    
+    .dark-mode .mobile-logo-button {
+      color: lightblue;
+    }
+    
+    .light-mode .mobile-logo-button {
+      color: #333;
+    }
+  }
+  

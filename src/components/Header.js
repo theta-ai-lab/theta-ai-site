@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
 function Header({ darkMode, toggleMode }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
+    <>
+      {/* Mobile Logo Button */}
+      <button className="mobile-logo-button" onClick={toggleModal}>
+        <span className="theta-logo">&#x03D1;</span>
+      </button>
+
+      {/* Desktop Header */}
       <header className={`navbar ${darkMode ? 'dark-mode' : 'light-mode'}`}>
         <div className="logo">
           {/* Use Unicode character U+03D1 (θ) */}
@@ -37,7 +50,30 @@ function Header({ darkMode, toggleMode }) {
             {darkMode ? '🌙' : '☀️'}
           </button>
       </header>
-);
+
+      {/* Mobile Navigation Modal */}
+      <div className={`modal-overlay ${isModalOpen ? 'active' : ''}`} onClick={toggleModal}>
+        <div className="modal-content" onClick={e => e.stopPropagation()}>
+          <nav>
+            <ul className="modal-nav-list">
+              <li><Link to="/" onClick={toggleModal}>Company</Link></li>
+              <li><Link to="/team" onClick={toggleModal}>Team</Link></li>
+              <li><Link to="/projects" onClick={toggleModal}>Projects</Link></li>
+              <li>
+                <button onClick={(e) => {
+                  e.preventDefault();
+                  toggleMode();
+                  toggleModal();
+                }}>
+                  {darkMode ? '🌙' : '☀️'} Toggle Theme
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default Header;

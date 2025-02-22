@@ -22,6 +22,12 @@
   /* Background now applied via pseudo-element */
 }
 
+@media (max-width: 600px) {
+  .team-page {
+    padding: 2rem 1rem; /* Reduced padding on mobile */
+  }
+}
+
 /* Mimic home page background overlay */
 .team-page::before {
   content: "";
@@ -52,6 +58,15 @@
   display: none; /* Chrome, Safari, Opera */
 }
 
+/* MOD: Mobile adjustment - stack team cards vertically */
+@media (max-width: 600px) {
+  .team-container {
+    flex-direction: column; /* Changed to column for mobile */
+    gap: 1.5rem; /* Reduced gap on mobile */
+    padding: 0 1rem;
+  }
+}
+
 /* Team card styles with original fadeInUp animation */
 .team-card {
   background: rgba(255, 255, 255, 0.05); /* Semi-transparent white */
@@ -64,6 +79,13 @@
   overflow: hidden;
   opacity: 0;
   animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* MOD: Mobile adjustment - reduce card padding */
+@media (max-width: 600px) {
+  .team-card {
+    padding: 1rem; /* Reduced padding for mobile */
+  }
 }
 
 /* Light mode: more prominent boxes */
@@ -95,10 +117,26 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* MOD: Mobile adjustment - reduce photo size */
+@media (max-width: 600px) {
+  .team-photo {
+    width: 120px; /* Reduced width on mobile */
+    height: 120px; /* Reduced height on mobile */
+    margin: -60px auto 1rem; /* Adjusted margin for smaller photo */
+  }
+}
+
 .team-card h2 {
   color: var(--text-color);
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
+}
+
+/* MOD: Mobile adjustment - reduce header font size */
+@media (max-width: 600px) {
+  .team-card h2 {
+    font-size: 1.25rem; /* Reduced font size on mobile */
+  }
 }
 
 .team-card p {
@@ -137,6 +175,13 @@
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
+}
+
+/* MOD: Mobile adjustment - reduce main header font size */
+@media (max-width: 600px) {
+  .team-page h1 {
+    font-size: 2rem; /* Reduced header font size on mobile */
+  }
 }
 
 .team-page h1::after {

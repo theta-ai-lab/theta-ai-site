@@ -46,6 +46,13 @@
     flex-direction: column;
     gap: 10px;
   }
+  .sitemap {
+    display: none;
+  }
+  .nothing {
+    display: none;
+  }
+  
 }
 
 .horizontal-nav {
