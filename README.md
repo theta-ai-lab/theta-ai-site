@@ -41,9 +41,9 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## TODO list
 
-- add site map and company info in the bottom of the page
 - add team member info
 - create projects page and add info
-- change header color
+- refactor header so that it looks like freenow
+- add contact us page
 - fix issues with light font
   
