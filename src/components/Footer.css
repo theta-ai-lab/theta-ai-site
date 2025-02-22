@@ -98,3 +98,24 @@
   transform: scaleX(1);
   transform-origin: left;
 }
+
+.company-info-list {
+  display: flex;
+  gap: 16px; /* Adjust spacing between items */
+  list-style: none; /* Removes bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.company-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .company-links {
+    justify-content: center;
+  }
+
+}
