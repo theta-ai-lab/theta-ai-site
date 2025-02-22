@@ -188,6 +188,12 @@
   .modal-overlay.active {
     display: flex;
   }
+
+  .mode-toggle {
+    border: none; /* Remove the border */
+    outline: none; /* Remove focus outline */
+    background: transparent; /* Ensure no background */
+  }
   
   /* Mobile Styles */
   @media screen and (max-width: 768px) {
@@ -227,7 +233,7 @@
     border: none; /* Remove the border */
     outline: none; /* Remove focus outline */
     background: transparent; /* Ensure no background */
-}
+  }
 
   }
   
