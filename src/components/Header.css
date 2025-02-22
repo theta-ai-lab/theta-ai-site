@@ -211,5 +211,23 @@
     .light-mode .mobile-logo-button {
       color: #333;
     }
+
+    .modal-nav-list a {
+      color: rgb(140, 192, 210); /* Change to any color you want */
+      font-size: 1.2rem; /* Adjust font size */
+      font-weight: bold; /* Make it bold if needed */
+   }
+
+    .modal-content {
+      background-color: rgba(65, 65, 65, 0.4); 
+      /* background-color: rgba(173, 216, 230, 0.218);  */
+   }
+
+   .modal-nav-list button {
+    border: none; /* Remove the border */
+    outline: none; /* Remove focus outline */
+    background: transparent; /* Ensure no background */
+}
+
   }
   

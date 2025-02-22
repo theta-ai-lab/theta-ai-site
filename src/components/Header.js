@@ -65,7 +65,7 @@ function Header({ darkMode, toggleMode }) {
                   toggleMode();
                   toggleModal();
                 }}>
-                  {darkMode ? '🌙' : '☀️'} Toggle Theme
+                  {darkMode ? '🌙' : '☀️'} 
                 </button>
               </li>
             </ul>
