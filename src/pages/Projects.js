@@ -1,33 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Projects.css";
+import { projectsData } from "../data/Projects";
 
-const projectsData = [
-  {
-    id: 1,
-    name: "Project One",
-    thumbnail: "https://via.placeholder.com/300x200?text=Project+One",
-    shortDescription: "A brief overview of Project One.",
-    details:
-      "Here are the details for Project One. This project leverages cutting-edge AI techniques to optimize data processing and improve efficiency."
-  },
-  {
-    id: 2,
-    name: "Project Two",
-    thumbnail: "https://via.placeholder.com/300x200?text=Project+Two",
-    shortDescription: "A brief overview of Project Two.",
-    details:
-      "Project Two focuses on developing machine learning models for predictive analytics, enabling smarter business decisions."
-  },
-  {
-    id: 3,
-    name: "Project Three",
-    thumbnail: "https://via.placeholder.com/300x200?text=Project+Three",
-    shortDescription: "A brief overview of Project Three.",
-    details:
-      "This project explores natural language processing solutions to enhance customer interactions and automate support tasks."
-  }
-];
 
 function Projects() {
   const [expandedProjectId, setExpandedProjectId] = useState(null);
