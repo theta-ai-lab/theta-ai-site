@@ -115,6 +115,7 @@
 }
 
 /* Team member image */
+/* Remove hover effect on .team-photo */
 .team-photo {
   width: 160px;
   height: 160px;
@@ -125,11 +126,28 @@
   transform: scale(1.05); /* Slightly zoom out the image */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Apply hover effects to the parent .team-card */
+.team-card:hover .team-photo {
+  transform: scale(1.1); /* Zoom in the photo */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+}
 
+/* Hover effect on team card itself */
+.team-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
 
-
+/* Light mode hover effect for team card */
+.app.light .team-card:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
 
 
 /* Mobile adjustments for photo */
