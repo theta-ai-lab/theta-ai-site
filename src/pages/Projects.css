@@ -29,49 +29,6 @@
   cursor: pointer;
 }
 
-/* Layout for the project summary (always visible) */
-.project-summary {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-}
-
-/* Thumbnail styling */
-.project-thumbnail {
-  width: 120px;
-  height: auto;
-  border-radius: 4px;
-  margin-right: 20px;
-}
-
-/* Info styling for project name and short description */
-.project-info h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: var(--text-color);
-}
-
-.project-info p {
-  margin: 5px 0 0;
-  font-size: 1rem;
-  color: var(--content-text-color);
-}
-
-/* Styling for the expandable project details */
-.project-details {
-  padding: 10px 20px;
-  background-color: rgba(0, 0, 0, 0.02);
-  text-align: left;
-  overflow: hidden;
-}
-
-.project-details p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--content-text-color);
-}
-
-
 :root {
   --text-color: lightblue; /* Matches Team.css */
   --gradient-end: white; /* Matches Team.css */
@@ -235,4 +192,5 @@
 .project-tab:nth-child(1) { animation-delay: 0.1s; }
 .project-tab:nth-child(2) { animation-delay: 0.2s; }
 .project-tab:nth-child(3) { animation-delay: 0.3s; }
+
 
