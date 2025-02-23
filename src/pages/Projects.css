@@ -195,3 +195,22 @@
 .project-tab:nth-child(3) { animation-delay: 0.3s; }
 
 
+/* Mobile View */
+
+@media screen and (max-width: 768px) {
+  .project-info h2 {
+    text-align: center;
+  }
+
+  .project-summary {
+    flex-direction: column; /* Stack vertically on mobile */
+    align-items: flex-start; /* Align content to the left */
+  }
+
+  .project-thumbnail {
+    width: 100%; /* Full width on mobile */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+
+}
