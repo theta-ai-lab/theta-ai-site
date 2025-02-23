@@ -131,6 +131,15 @@
     width: 120px;
     height: 120px;
   }
+
+  /* Reduce the space between the photo and the name */
+  .team-content {
+    gap: 0.5rem; /* Reduce the gap between the photo and name */
+  }
+
+  .team-card h2 {
+    margin-top: 0; /* Remove any default margin above the name */
+  }
 }
 
 /* Container for text */
