@@ -121,9 +121,16 @@
   border-radius: 50%;
   border: 3px solid var(--text-color);
   object-fit: cover;
+  object-position: 60% 10%; /* 50% horizontally (center), 20% vertically (20% from the top) */
+  transform: scale(1.05); /* Slightly zoom out the image */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   flex-shrink: 0;
 }
+
+
+
+
+
 
 /* Mobile adjustments for photo */
 @media (max-width: 600px) {

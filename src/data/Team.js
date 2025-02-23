@@ -1,4 +1,4 @@
-import pantosPhoto from '../data/team_photos/pantos_photo.jpg';
+import pantosPhoto from '../data/team_photos/pantos_photo_1.png';
 import tagarisPhoto from '../data/team_photos/tagaris_photo.png';
 import tasakosPhoto from '../data/team_photos/tasakos_photo.jpg';
 
