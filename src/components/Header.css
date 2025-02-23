@@ -1,23 +1,54 @@
 /* Global reset for box sizing */
+/* Global reset for margin, padding, and box-sizing */
+/* Global reset for margin, padding, and box-sizing */
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
+
+/* Ensure body and html don't overflow */
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navbar styling */
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px; /* Adjusted height for a slimmer navbar */
+  padding: 10px 20px; /* Reduced padding to make the navbar slimmer */
+  font-size: 1rem; /* Adjusted font size for a slimmer navbar */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 20px 5px rgba(173, 216, 230, 0.2); /* Stronger light blue glow */
+}
+
+/* Add this class when the navbar has scrolled past a certain point */
+.navbar.sticky-scrolled {
+  transform: translateY(10px); /* This moves the navbar down when scrolling */
+  box-shadow: 0 10px 20px rgba(173, 216, 230, 0.4); /* Increase the shadow when sticky */
+}
+
+/* Ensure the page doesn't overlap with the sticky navbar */
+body {
+  padding-top: 15; /* Same height as the navbar to ensure content is below */
+}
+
+
   
-  /* Header styling */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    overflow-x: hidden; /* Prevent overflow to the right */
-    transition: background-color 0.3s ease; /* Smooth transition for background */
-  }
   
+  
+  /* .nav-list .nav-link {
+    text-shadow: 0 0 5px lightblue, 0 0 10px lightblue; 
+  } */
+  
+
   /* Light mode navbar background */
   .light-mode .navbar {
     background-color: rgba(240, 240, 240, 0.9); /* Slightly gray with transparency */
@@ -58,7 +89,10 @@
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease; /* Smooth color transition */
+    /* text-shadow: 0 0 4px lightblue, 0 0 10px lightblue; Light blue glow for text */
   }
+  
+  
   
   /* Light mode links color */
   .light-mode nav a {

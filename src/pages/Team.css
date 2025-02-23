@@ -1,34 +1,31 @@
-/* Team.css */
 :root {
-  --text-color: lightblue; /* Matches Home.css */
-  --gradient-end: white; /* Matches Home.css */
-  --matrix-bg: rgba(0, 0, 0, 0.9); /* Matches Home.css */
-  --content-text-color: var(--text-color); /* Matches Home.css */
+  --text-color: lightblue;
+  --gradient-end: white;
+  --matrix-bg: rgba(0, 0, 0, 0.9);
+  --content-text-color: var(--text-color);
 }
 
 /* Light mode overrides */
 .app.light {
-  --text-color: #1a1a1a; /* Dark grey for light mode */
-  --gradient-end: #0066cc; /* Matches Home.css */
-  --matrix-bg: rgba(255, 255, 255, 0.9); /* Matches Home.css */
-  --content-text-color: #2d2d2d; /* Slightly lighter for readability */
+  --text-color: #1a1a1a;
+  --gradient-end: #0066cc;
+  --matrix-bg: rgba(255, 255, 255, 0.9);
+  --content-text-color: #2d2d2d;
 }
 
 .team-page {
-  position: relative; /* For overlay positioning */
+  position: relative;
   padding: 4rem 2rem;
   text-align: center;
   min-height: 100vh;
-  /* Background now applied via pseudo-element */
 }
 
 @media (max-width: 600px) {
   .team-page {
-    padding: 2rem 1rem; /* Reduced padding on mobile */
+    padding: 2rem 1rem;
   }
 }
 
-/* Mimic home page background overlay */
 .team-page::before {
   content: "";
   position: absolute;
@@ -41,35 +38,24 @@
   overflow: hidden;
 }
 
-/* Flex container aligned in one row with hidden scrollbar */
+/* Container for all team members */
 .team-container {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  gap: 2.5rem;
+  gap: 2rem;
   max-width: 100%;
-  overflow-x: auto; /* Enables horizontal scroll if needed */
   padding: 0 1rem;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-.team-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
 }
 
-/* MOD: Mobile adjustment - stack team cards vertically */
-@media (max-width: 600px) {
-  .team-container {
-    flex-direction: column; /* Changed to column for mobile */
-    gap: 1.5rem; /* Reduced gap on mobile */
-    padding: 0 1rem;
-  }
-}
-
-/* Team card styles with original fadeInUp animation */
+/* Team card styling */
 .team-card {
-  background: rgba(255, 255, 255, 0.05); /* Semi-transparent white */
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Center content horizontally */
+  justify-content: space-between; /* Space out the content */
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
   padding: 1.5rem;
   backdrop-filter: blur(10px);
@@ -79,18 +65,20 @@
   overflow: hidden;
   opacity: 0;
   animation: fadeInUp 0.6s ease-out forwards;
+  max-width: 500px;
+  min-height: 350px;  /* Ensure sufficient height for layout */
 }
 
-/* MOD: Mobile adjustment - reduce card padding */
+/* Mobile adjustments */
 @media (max-width: 600px) {
   .team-card {
-    padding: 1rem; /* Reduced padding for mobile */
+    padding: 1rem;
   }
 }
 
-/* Light mode: more prominent boxes */
+/* Light mode adjustments */
 .app.light .team-card {
-  background: rgba(0, 0, 0, 0.05); /* Semi-transparent black for light mode */
+  background: rgba(0, 0, 0, 0.05);
   border: 2px solid rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -107,36 +95,87 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
+/* New: Flex container for image & text */
+.team-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+/* Layout for larger screens */
+@media (min-width: 768px) {
+  .team-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+  }
+}
+
+/* Team member image */
 .team-photo {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  margin: -80px auto 1rem;
   border: 3px solid var(--text-color);
   object-fit: cover;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
 }
 
-/* MOD: Mobile adjustment - reduce photo size */
+/* Mobile adjustments for photo */
 @media (max-width: 600px) {
   .team-photo {
-    width: 120px; /* Reduced width on mobile */
-    height: 120px; /* Reduced height on mobile */
-    margin: -60px auto 1rem; /* Adjusted margin for smaller photo */
+    width: 120px;
+    height: 120px;
   }
 }
 
-.team-card h2 {
-  color: var(--text-color);
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+/* Container for text */
+.team-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  text-align: left; /* Align text to the left */
 }
 
-/* MOD: Mobile adjustment - reduce header font size */
-@media (max-width: 600px) {
-  .team-card h2 {
-    font-size: 1.25rem; /* Reduced font size on mobile */
-  }
+/* Remove margin between title and education */
+.team-info h3, .team-info .education {
+  margin-bottom: 0; /* No bottom margin */
+}
+
+/* Bio text with preserved line breaks */
+.team-info p {
+  white-space: pre-wrap; /* Preserves both newlines and spaces */
+  line-height: 1.8;
+  margin-top: 0.25rem; /* Reduced space before bio */
+  margin-bottom: 0.75rem; /* Reduced space after bio */
+  font-size: 1.1rem;
+  text-align: left;
+  color: white; /* Bio text is white */
+}
+
+/* Education styling */
+.team-info .education {
+  font-size: 1.2rem; /* Reduced font size */
+  color: var(--content-text-color);
+  font-weight: bold;
+  text-align: left;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 
+               0 0 15px rgba(255, 255, 255, 0.2); /* Glow effect */
+  margin-bottom: 0.25rem; /* Reduced space after education */
+}
+
+/* Adjust bio styling if needed */
+.team-info .bio-paragraph {
+  font-size: 1.1rem;
+  color: var(--content-text-color);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  text-align: left;
 }
 
 .team-card p {
@@ -146,6 +185,29 @@
   min-height: 80px;
 }
 
+/* Name styling */
+.team-card h2 {
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+/* Mobile adjustment for name */
+@media (max-width: 600px) {
+  .team-card h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Bio text */
+.team-card p {
+  color: var(--content-text-color);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  min-height: 80px;
+}
+
+/* LinkedIn button */
 .team-card a {
   display: inline-flex;
   align-items: center;
@@ -155,20 +217,29 @@
   color: white;
   border-radius: 25px;
   text-decoration: none;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.9s ease;
+  margin-top: auto;  /* Push the button to the bottom of the card */
+  box-shadow: 0 0 8px rgba(0, 180, 216, 1.9), 0 0 12px rgba(0, 180, 216, 0.7);
+}
+.bio-paragraph {
+  white-space: pre-line;  /* Preserves newlines within text */
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  text-align: left;
 }
 
-/* Dark mode Connect button (unchanged) */
 .app.dark .team-card a {
   color: #ddd;
   background: linear-gradient(45deg, #00aabb, #004488);
 }
 
 .team-card a:hover {
-  transform: scale(1.00);
-  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+  transform: scale(1.0);
+  box-shadow: 0 0 20px rgba(0, 180, 216, 1), 0 0 30px rgba(0, 180, 216, 2), 0 0 40px rgba(0, 180, 216, 5);
 }
 
+/* Section title */
 .team-page h1 {
   font-size: 2.5rem;
   color: var(--text-color);
@@ -177,13 +248,14 @@
   display: inline-block;
 }
 
-/* MOD: Mobile adjustment - reduce main header font size */
+/* Mobile adjustment for title */
 @media (max-width: 600px) {
   .team-page h1 {
-    font-size: 2rem; /* Reduced header font size on mobile */
+    font-size: 2rem;
   }
 }
 
+/* Underline effect */
 .team-page h1::after {
   content: '';
   position: absolute;
@@ -195,7 +267,7 @@
   background: linear-gradient(90deg, cyan, var(--gradient-end));
 }
 
-/* Original fadeInUp animation keyframes */
+/* Fade-in animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -207,7 +279,7 @@
   }
 }
 
-/* Stagger animations for each card */
+/* Staggered animations */
 .team-card:nth-child(1) { animation-delay: 0.1s; }
 .team-card:nth-child(2) { animation-delay: 0.2s; }
 .team-card:nth-child(3) { animation-delay: 0.3s; }
