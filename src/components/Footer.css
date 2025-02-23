@@ -40,21 +40,6 @@
   color: grey;
 }
 
-/* Mobile Fix */
-@media (max-width: 600px) {
-  .footer-content {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .sitemap {
-    display: none;
-  }
-  .nothing {
-    display: none;
-  }
-  
-}
-
 .horizontal-nav {
   display: flex;
   gap: 2rem; /* Consistent spacing between items */
@@ -114,8 +99,24 @@
 }
 
 @media screen and (max-width: 768px) {
+  .company-info-list {
+    justify-content: center;
+  }
+
   .company-links {
     justify-content: center;
   }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sitemap {
+    display: none;
+  }
+  .nothing {
+    display: none;
+  }
+
 
 }

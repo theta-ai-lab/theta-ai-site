@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
         <div className="footer-section company-info">
         <h4>Company Info</h4>
-          <ul className="company-info-list">
+          <ul className="">
           <li>Theta AI</li>
           <li>Chalandri, Greece</li>
           <li>+30 2106893472</li>
