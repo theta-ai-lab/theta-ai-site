@@ -1,5 +1,5 @@
 import pantosPhoto from '../data/team_photos/pantos_photo_1.png';
-import tagarisPhoto from '../data/team_photos/tagaris_photo.png';
+import tagarisPhoto from '../data/team_photos/tagaris_photo_2.png';
 import tasakosPhoto from '../data/team_photos/tasakos_photo.jpg';
 
 export const teamData = [
