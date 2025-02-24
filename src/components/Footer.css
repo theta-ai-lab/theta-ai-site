@@ -2,17 +2,19 @@
   width: 100%;
   background: inherit; /* Matches main page */
   font-size: 0.75rem;
-  padding: 10px 0; /* Slimmer footer */
   display: flex;
   flex-direction: column;
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  /*padding: 2rem 1rem;*/
+  text-align: center;
 }
 
 .footer-content {
   display: flex;
   justify-content: center; /* Centers everything */
   align-items: center;
+  flex-direction: column;
   gap: 80px; /* Keeps columns evenly spaced */
   max-width: 900px; /* Prevents stretching */
   width: 100%;
@@ -38,6 +40,21 @@
 
 .app.light .footer {
   color: grey;
+}
+
+/* Mobile Fix */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sitemap {
+    display: none;
+  }
+  .nothing {
+    display: none;
+  }
+
 }
 
 .horizontal-nav {
@@ -84,39 +101,20 @@
   transform-origin: left;
 }
 
-.company-info-list {
-  display: flex;
-  gap: 16px; /* Adjust spacing between items */
-  list-style: none; /* Removes bullet points */
-  padding: 0;
-  margin: 0;
+.company-info ul {
+  /*display: flex; !* Make the list horizontal *!*/
 }
 
 .company-links {
   display: flex;
   gap: 16px;
   margin-top: 5px;
+  justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
-  .company-info-list {
-    justify-content: center;
-  }
-
   .company-links {
     justify-content: center;
   }
-
-  .footer-content {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .sitemap {
-    display: none;
-  }
-  .nothing {
-    display: none;
-  }
-
 
 }
