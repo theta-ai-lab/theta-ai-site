@@ -1,0 +1,240 @@
+/* Container styling for the partners page */
+.partners-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+}
+
+/* Page title styling */
+.partners-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+  text-align: left;
+}
+
+/* Container for the partner tabs */
+.partners-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Styling for each partner tab */
+.partner-tab {
+  background: rgba(255, 255, 255, 0.05); /* Semi-transparent white for dark mode */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+:root {
+  --text-color: lightblue; /* Matches Team.css */
+  --gradient-end: white; /* Matches Team.css */
+  --matrix-bg: rgba(0, 0, 0, 0.9); /* Matches Team.css */
+  --content-text-color: var(--text-color); /* Matches Team.css */
+}
+
+/* Light mode overrides */
+.app.light {
+  --text-color: #1a1a1a; /* Dark grey for light mode */
+  --gradient-end: #0066cc; /* Matches Team.css */
+  --matrix-bg: rgba(255, 255, 255, 0.9); /* Matches Team.css */
+  --content-text-color: #2d2d2d; /* Slightly lighter for readability */
+}
+
+.partners-page {
+  position: relative; /* For overlay positioning */
+  padding: 4rem 2rem 4rem; /* Starts lower on page */
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* Background overlay similar to Team.css */
+.partners-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--matrix-bg);
+  z-index: -1;
+}
+
+.partners-page h1 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.partners-page h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, cyan, var(--gradient-end));
+}
+
+/* ... (existing global CSS variables, light mode overrides, partners-page, and title styles remain) ... */
+
+/* Container styling for the partners page */
+.partners-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Container for the partner tabs */
+.partners-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.partner-thumbnail {
+  width: 120px;
+  height: 120px; /* Make it a square */
+  border-radius: 50%; /* Makes the icon rounded, same as team photo */
+  border: 3px solid var(--text-color); /* Same border as team photo */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Same box shadow as team photo */
+  object-fit: cover; /* Ensure the image fits well within the circle */
+  margin-right: 20px; /* Space between the thumbnail and text */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.partner-thumbnail:hover {
+  transform: translateY(-5px); /* Hover effect for partner icon */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Hover shadow effect */
+}
+
+
+/* Hover effects for partner tabs (dark mode) */
+.partner-tab:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Light mode adjustments for partner tabs */
+.app.light .partner-tab {
+  background: rgba(0, 0, 0, 0.05); /* Semi-transparent black for light mode */
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.app.light .partner-tab:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Layout for the partner summary (always visible) */
+.partner-summary {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Thumbnail styling */
+.partner-thumbnail {
+  width: 120px;
+  height: auto;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+
+/* Info styling for partner name and short description */
+.partner-info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  text-align: left;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.4);
+}
+
+/* Light mode adjustments to remove the glow effect */
+.app.light .partner-info h2 {
+  text-shadow: none; /* Disable glow effect in light mode */
+}
+
+
+
+.partner-info p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+  color: var(--content-text-color);
+}
+
+/* Styling for the expandable partner details */
+.partner-details {
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.02);
+  text-align: left;
+  overflow: hidden;
+}
+
+.partner-details p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--content-text-color);
+}
+
+/* FadeInUp Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optionally, add staggered animation delays for multiple tabs */
+
+.partner-tab:nth-child(1) { animation-delay: 0.1s; }
+.partner-tab:nth-child(2) { animation-delay: 0.2s; }
+.partner-tab:nth-child(3) { animation-delay: 0.3s; }
+.partner-tab:nth-child(4) { animation-delay: 0.4s; }
+.partner-tab:nth-child(5) { animation-delay: 0.5s; }
+
+
+/* Mobile View */
+
+@media screen and (max-width: 768px) {
+  .partner-info h2 {
+    text-align: center;
+  }
+
+  .partner-summary {
+    flex-direction: column; /* Stack vertically on mobile */
+    align-items: flex-start; /* Align content to the left */
+  }
+
+  .partner-thumbnail {
+    width: 100%; /* Full width on mobile */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .partner-info {
+    margin-top: 10px;
+  }
+
+
+}
