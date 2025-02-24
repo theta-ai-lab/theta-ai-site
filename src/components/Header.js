@@ -39,6 +39,11 @@ function Header({ darkMode, toggleMode }) {
               </Link>
             </li>
             <li>
+              <Link to="/partners" className="nav-link">
+                Partners
+              </Link>
+            </li>
+            <li>
               <Link to="/projects" className="nav-link">
                 Projects
               </Link>
@@ -46,8 +51,8 @@ function Header({ darkMode, toggleMode }) {
           </ul>
         </nav>
         {/*<button onClick={toggleMode} className="mode-toggle">*/}
-          <button className="mode-toggle">
-            {darkMode ? '🌙' : '☀️'}
+        <button className="mode-toggle">
+        {darkMode ? '🌙' : '☀️'}
           </button>
       </header>
 
@@ -58,6 +63,7 @@ function Header({ darkMode, toggleMode }) {
             <ul className="modal-nav-list">
               <li><Link to="/" onClick={toggleModal}>Company</Link></li>
               <li><Link to="/team" onClick={toggleModal}>Team</Link></li>
+              <li><Link to="/partners" onClick={toggleModal}>Partners</Link></li>
               <li><Link to="/projects" onClick={toggleModal}>Projects</Link></li>
               <li>
                 <button onClick={(e) => {
@@ -65,7 +71,7 @@ function Header({ darkMode, toggleMode }) {
                   toggleMode();
                   toggleModal();
                 }}>
-                  {darkMode ? '🌙' : '☀️'} 
+                  {darkMode ? '🌙' : '☀️'}
                 </button>
               </li>
             </ul>

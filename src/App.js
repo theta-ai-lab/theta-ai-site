@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
-import Footer from './components/Footer'; // Import Footer
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Footer from './components/Footer';
+import CustomCursor from "./components/CustomCursor";
 import Home from './pages/Home';
 import Team from './pages/Team';
 import Projects from './pages/Projects';
-import CustomCursor from "./components/CustomCursor"; // Import custom cursor
+import Partners from './pages/Partners'
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -30,8 +31,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/partners" element={<Partners />} />
             <Route path="/projects" element={<Projects />} />
-            {/* You can add more routes, e.g., for /projects, as needed */}
           </Routes>
         </main>
         <Footer /> {/* Ensure Footer is always at the bottom */}
