@@ -202,6 +202,15 @@
   color: var(--content-text-color);
 }
 
+.toggle-arrow {
+  color: lightblue;
+  font-size: 0.7rem;
+  user-select: none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
 /* FadeInUp Animation */
 @keyframes fadeInUp {
   from {

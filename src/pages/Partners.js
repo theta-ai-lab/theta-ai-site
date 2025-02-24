@@ -17,35 +17,38 @@ function Partners() {
       <div className="partners-container">
         <div className="partners-tabs">
           {partnersData.map((partner) => (
-            <div key={partner.id} className="partner-tab">
-              <div
-                className="partner-summary"
-                onClick={() => togglePartner(partner.id)}
-              >
-                <img
-                  src={partner.thumbnail}
-                  alt={partner.name}
-                  className="partner-thumbnail"
-                />
-                <div className="partner-info">
-                  <h2>{partner.name}</h2>
-                  <p>{partner.shortDescription}</p>
-                </div>
-              </div>
-              <AnimatePresence initial={false}>
-                {expandedPartnerId === partner.id && (
-                  <motion.div
-                    className="partner-details"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+              <div key={partner.id} className="partner-tab">
+                  <div
+                      className="partner-summary"
+                      onClick={() => togglePartner(partner.id)}
                   >
-                    <p>{partner.details}</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                      <img
+                          src={partner.thumbnail}
+                          alt={partner.name}
+                          className="partner-thumbnail"
+                      />
+                      <div className="partner-info">
+                          <h2>{partner.name}</h2>
+                          <p>{partner.shortDescription}</p>
+                      </div>
+                  </div>
+                  <span className="toggle-arrow">
+                      {expandedPartnerId === partner.id ? "▲" : "▼"}
+                  </span>
+                  <AnimatePresence initial={false}>
+                      {expandedPartnerId === partner.id && (
+                          <motion.div
+                              className="partner-details"
+                              initial={{height: 0, opacity: 0}}
+                              animate={{height: "auto", opacity: 1}}
+                              exit={{height: 0, opacity: 0}}
+                              transition={{duration: 0.3}}
+                          >
+                              <p>{partner.details}</p>
+                          </motion.div>
+                      )}
+                  </AnimatePresence>
+              </div>
           ))}
         </div>
       </div>
