@@ -6,7 +6,6 @@
   flex-direction: column;
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  /*padding: 2rem 1rem;*/
   text-align: center;
 }
 
@@ -22,9 +21,23 @@
 }
 
 .footer-section {
+  display: none;
   text-align: center;
   flex: 1; /* Equal space for both sections */
 }
+
+
+.company-info ul {
+  /*display: flex; !* Make the list horizontal *!*/
+}
+
+.company-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 5px;
+  justify-content: center;
+}
+
 
 .copyright {
   width: 100%;
@@ -32,6 +45,7 @@
   margin-top: 5px;
   font-size: 0.7rem;
 }
+
 
 /* Theme colors */
 .app.dark .footer {
@@ -42,9 +56,13 @@
   color: grey;
 }
 
-/* Mobile Fix */
-@media (max-width: 600px) {
+
+/* Mobile view */
+
+@media screen and (max-width: 768px) {
+
   .footer-content {
+    display: flex;
     flex-direction: column;
     gap: 10px;
   }
@@ -55,7 +73,14 @@
     display: none;
   }
 
+  .company-links {
+    justify-content: center;
+  }
+
 }
+
+
+/* CSS for disabled content */
 
 .horizontal-nav {
   display: flex;
@@ -99,22 +124,4 @@
 .horizontal-nav a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
-}
-
-.company-info ul {
-  /*display: flex; !* Make the list horizontal *!*/
-}
-
-.company-links {
-  display: flex;
-  gap: 16px;
-  margin-top: 5px;
-  justify-content: center;
-}
-
-@media screen and (max-width: 768px) {
-  .company-links {
-    justify-content: center;
-  }
-
 }
