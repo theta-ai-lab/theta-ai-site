@@ -25,7 +25,7 @@ const Home = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1.5 }}
       >
-        Harnessing the power of AI & Machine Learning.
+        Artificial Intelligence and Machine Learning solutions
       </motion.p>
 
       {/* Main Content */}
@@ -36,9 +36,8 @@ const Home = () => {
         transition={{ delay: 1.5, duration: 1.2, ease: "easeOut" }}
       >
         <p>
-          At Theta AI, we build cutting-edge AI solutions, from NLP to
-          predictive analytics. Our mission is to revolutionize data-driven
-          decision-making.
+          At Theta AI, we build cutting-edge AI solutions in various application areas, across numerous domains.
+          Our team has significant expertise ranging from state-of-the-art research projects to very large scale industrial systems.
         </p>
       </motion.div>
     </div>
