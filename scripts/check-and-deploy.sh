@@ -22,7 +22,7 @@ if [ "$LOCAL_COMMIT" != "$REMOTE_COMMIT" ]; then
 
   # Redeploy webserver and proxy
   docker compose down
-  docker compose up -d
+  docker compose up --build -d
 else
   echo "No changes detected."
 fi
