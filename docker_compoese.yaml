@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  theta-ai-site-container:
+    build: ./react-app
+    image: theta-ai-site:latest
+    ports:
+      - "3000:3000"  # TODO: Remove this after debug
+    networks:
+      - theta-ai-network
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ~/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ~/docker_ssl/fullchain.pem:/etc/ssl/certs/fullchain.pem
+      - ~/docker_ssl/privkey.key:/etc/ssl/private/privkey.key
+    networks:
+      - theta-ai-network
+    depends_on:
+      - theta-ai-site-container
+
+networks:
+  theta-ai-network:
+    driver: bridge
